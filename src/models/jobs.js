@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const { Schema } = mongoose;
-const jobSchema =  new Schema({
+const {Schema} = mongoose;
+const jobSchema = new Schema({
     job: {
         type: String,
         required: true
@@ -10,7 +10,7 @@ const jobSchema =  new Schema({
         required: true
     },
     timestamp: {
-      type: Date
+        type: Date
     },
     log: {
         type: String

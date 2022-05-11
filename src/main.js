@@ -2,9 +2,9 @@ const express = require('express');
 const {runJob} = require("./service/serviceSSH");
 const config = require("config");
 const {url} = config.get('database')
-const run = require ("./db-operations/jobRepository")
-const {connect} =require ("./db-operations/mongooseConfig")
-const timestamp = require ("./models/jobs");
+const run = require("./service/jobRepository")
+const {connect} = require("./service/mongooseConfig")
+const timestamp = require("./models/jobs");
 
 
 const app = express()
@@ -19,19 +19,18 @@ app.get('/run', async (req, res) => {
     }
 
 
-try {
-        const stdout = await runJob(job,hostname)
-    res.send(stdout)
+    try {
+        const stdout = await runJob(job, hostname)
+        res.send(stdout)
 
-    await run.saveJob(job,hostname,timestamp,stdout)
-}catch (error){
+        await run.saveJob(job, hostname, timestamp, stdout)
+    } catch (error) {
         console.log(error)
-}
+    }
 })
-
 
 
 app.listen(8080, () => {
     console.log('Server is up')
 })
- connect(url);
+connect(url);

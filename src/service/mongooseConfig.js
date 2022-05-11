@@ -1,13 +1,11 @@
 const config = require("config");
 const mongoose = require("mongoose");
 
-
-
-const connect =  () => {
+const connect = () => {
     const {url} = config.get('database')
     mongoose.connect(url, (err, done) => {
         if (err) {
-            throw err ;
+            throw err;
         }
         if (done) {
             console.log("DATA BASE CONNECTED")
@@ -15,4 +13,4 @@ const connect =  () => {
 
     });
 }
-exports.connect=connect
+exports.connect = connect
