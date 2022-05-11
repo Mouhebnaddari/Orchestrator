@@ -2,8 +2,8 @@ const express = require('express');
 const {runJob} = require("./service/serviceSSH");
 const config = require("config");
 const {url} = config.get('database')
-const run = require ("./db-operations/jobRepository")
-const {connect} =require ("./db-operations/mongooseConfig")
+const run = require ("./service/jobRepository")
+const {connect} =require ("./service/mongooseConfig")
 const timestamp = require ("./models/jobs");
 
 
