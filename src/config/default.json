@@ -1,0 +1,25 @@
+{
+  "servers": [
+    {
+      "username": "vagrant",
+      "ip": "192.168.56.11",
+      "hostname": "node1",
+      "privateKey": "C:\\Users\\L390\\.ssh\\id_rsa",
+      "workspace": "/home/vagrant/workspace"
+    },
+    {
+      "username": "vagrant",
+      "ip": "192.168.56.12",
+      "hostname": "node2",
+      "privateKey": "C:\\Users\\L390\\.ssh\\id_rsa",
+      "workspace": "/home/vagrant/workspace"
+    }
+  ],
+  "jobs": {
+    "jobsRepo": "https://github.com/Mouhebnaddari/infra.git",
+    "jobsPath": "infra/templates"
+  },
+  "database": {
+    "url"  : "mongodb://localhost:27017"
+  }
+}
