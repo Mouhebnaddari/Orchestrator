@@ -18,7 +18,6 @@ class SecureShellProvider {
         return this.exec(`git clone ${repo}`, cwd)
     }
 
-
     run = async (script, cwd) => {
         await this.connect()
         await this.exec(`chmod +x ${script}`, cwd)

@@ -4,7 +4,7 @@ const {Schema} = mongoose;
 const userSchema = new Schema({
     username: {
         type: String,
-        required: true
+
     },
     password: {
         type: String,
@@ -12,10 +12,7 @@ const userSchema = new Schema({
     },
     email: {
         type: String, unique: true
-    },
-    token: {
-        type: String
     }
 })
-module.exports = signup = mongoose.model('user', userSchema)
+module.exports = User = mongoose.model("user", userSchema);
 

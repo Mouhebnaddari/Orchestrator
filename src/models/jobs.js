@@ -1,3 +1,5 @@
+
+
 const mongoose = require('mongoose')
 const { Schema } = mongoose;
 const jobSchema =  new Schema({
@@ -10,10 +12,13 @@ const jobSchema =  new Schema({
         required: true
     },
     timestamp: {
-      type: Date
+      type: Date,
+
     },
     log: {
-        type: String
+        type: String,
+
     }
 })
+
 module.exports = Job = mongoose.model('job', jobSchema)

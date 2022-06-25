@@ -1,6 +1,5 @@
 const SecureShellProvider = require("./SecureShellProvider");
 const config = require("config");
-
 const jobsConfig = config.get('jobs')
 const serversConfig = config.get('servers');
 
@@ -14,11 +13,10 @@ const runJob = async (job, hostname) => {
     await ssp.mkdir(tmpWorkspace);
     console.info('Cloning jobs..')
     await ssp.clone(jobsRepo, tmpWorkspace);
-
     console.info('Running job..')
     const stdout = await ssp.run(job, `${tmpWorkspace}/${jobsPath}`);
     console.info('Done successfully');
     return stdout
 }
-
 exports.runJob = runJob
+
